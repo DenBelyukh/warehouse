@@ -1,0 +1,100 @@
+html, body {
+	font- family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+/* стиль для посилань */
+a {
+	color: #0059b2;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #AAA;
+	text-decoration: none;
+}
+
+.clear {clear: both;}
+
+/* стиль для головного меню */
+ul.mainmenu {
+	list-style: none;
+	background: #F0F0F0;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	color: #fdc073;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 50px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: #707070;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #FDA83D;
+}
+
+
+div.content {
+    margin: 10px;
+}
+
+
+
+
+.form-contact label {
+            display: none;
+            min-width: 80px;
+}
+
+.form-contact p {
+            margin: 10px 0 10px 0;
+}
+
+.form-contact input[type=submit], textarea {
+            font-size: 16px;
+}
+
+/* стилі для списку миттєвих сповіщень */
+.flash {padding: 10px;}
+.flash.success {
+         border: 1px solid #21DB56;
+         background: #AEFFC5;
+}
+.flash.error {
+         border: 1px solid #FF4343;
+         background: #FF9C9C;
+}
+
+/* стилі для списку статей */
+ul.list-posts {
+         list-style: none;
+         margin: 0;
+         padding 0;
+         max-width: 1000px;
+}
+ul.list-posts li {
+         margin: 20px 0 0 0;
+         border: 1px solid #eee;
+}
+ul.list-posts .title {
+         margin: 0;
+         padding: 5px;
+         background: #eee;
+}
+ul.list-posts .annonce {
+         margin: 0;
+         padding: 10px 5px 10px 5px;
+}
+	

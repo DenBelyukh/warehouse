@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<h1>{{title}}</h1>
+<ul class="list-posts">
+{% for i in conf_total %}
+    <li> Варення {{i.conf_name}} - {{i.volume}}л. - {{i.amount}} шт.
+
+        <form action="{{url_for('foo_itemEdit')}}" method="post" class="form-contact">
+            <input type="hidden" name="wh_Id" value={{i.wh_Id}} />
+            <input type="submit" value="Редагувати" />
+        </form>
+
+    </li>
+{% endfor %}
+</ul>
+<h2>Запаси по сорту:
+    <form action="{{url_for('foo_getSort')}}" method="post" class="form-contact">
+            <input type="text" name="sort" value='' required />
+            <input type="submit" value="Розрахувати" />
+    </form>
+</h2>
+
+<!--{{ warehouse | safe }}-->
+{% endblock content %}

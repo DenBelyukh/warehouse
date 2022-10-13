@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+
+<ul class="list-posts">
+{% for i in item %}
+    <li> Варення {{i.conf_name}} - {{i.volume}}л. - {{i.amount}} шт.</li>
+<form action="{{url_for('foo_addNewData')}}" method="post" class="form-contact">
+            <input type="hidden" name="wh_Id" value={{i.wh_Id}} />
+            <input type="text" name="conf_name" value={{i.conf_name}} />
+            <input type="text" name="volume" value={{i.volume}} />
+            <input type="text" name="amount" value={{i.amount}} />
+            <input type="submit" value="Змінити" />
+</form>
+
+{% endfor %}
+</ul>
+<p>Повернутись <a href="{{url_for('foo_pageTotal')}}"> наверх </a></p>
+{% endblock content %}

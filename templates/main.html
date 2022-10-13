@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<link type="text/css" href="{{url_for('static', filename='css/drop_style1.css')}}" rel="stylesheet" />
+
+<h2> Вітаю на складі, {{ current_user.get_name() }} </h2>
+<nav>
+	<menu class = "boxes">
+		{%for b in boxes %}
+		<menuitem><a href="{{b.url}}">{{b.name}}</a></menuitem>
+		{%endfor%}
+	</menu>
+</nav>
+
+
+{% endblock content %}

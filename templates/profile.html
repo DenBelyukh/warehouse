@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+
+<p><a href="{url_for('foo_index')}">На головну</a>
+<p><a href="{url_for('foo_logout')}">Вийти з акаунту</a>
+<!--# current_user - спеціальна змінна, через яку можна звертатись -->
+<!--# до методів класу UserLogin-->
+<p>user id: {{current_user.get_id()}}
+<p>user name: {{current_user.get_name()}}
+
+{% endblock content %}

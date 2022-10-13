@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+
+<h2> {{title.lower()}} </h2>
+<ul class="list-posts">
+{% for i in conf_sort %}
+    <li>
+    <p class="title"> Варення {{i.conf_name}} - {{i.volume}}л. - {{i.amount}} шт.</p>
+
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<link type="text/css" href="{{url_for('static', filename='css/drop_style1.css')}}" rel="stylesheet" />
+
+<h1> Вітаємо в WAHREHOUSE</h1>
+онлайн-застосунку для контролю за запасами
+
+{% if not current_user.get_id() %}
+    <p> <a href="{{url_for('foo_login')}}">Авторизуйтесь</a>, щоб перейти в свій склад</p>
+    <p> Якщо Ви тут вперше - перейдіть на сторінку <a href="{{url_for('foo_register')}}">РЕЄСТРАЦІЇ</a></p>
+{% else %}
+    <p>Привіт, {{ current_user.get_name() }} </p>
+    <p>Зайти в <a href="{{url_for('foo_profile')}}"> КАБІНЕТ </a></p>
+    <p>Повернутись на <a href="{{url_for('foo_main')}}"> СКЛАД </a></p>
+    <p> <a href="{{url_for('foo_logout')}}"> Вийти з акаунту</a></p>
+{% endif %}
+
+
+{% endblock content %}

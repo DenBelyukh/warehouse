@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<link type="text/css" href="{{url_for('static', filename='css/drop_style1.css')}}" rel="stylesheet" />
+
+<nav>
+	<menu class = "boxes">
+		{%for b in boxes %}
+		<menuitem><a href="{{b.url}}">{{b.name}}</a></menuitem>
+		{%endfor%}
+	</menu>
+</nav>
+
+<!--	{%- block boxes -%}-->
+<!--	<ul class = "boxes">-->
+<!--		{%for b in boxes %}-->
+<!--		<li><a href="{{b.url}}">{{b.name}}</a></li>-->
+<!--		{%endfor%}-->
+<!--	</ul>-->
+<!--	{% endblock boxes -%}-->
+
+<!-- <p> Вітаємо в підвалі з варенням та конфітюрами</p>
+<p><h2> Загальні запаси становлять </h2></p>
+
+<ul class="list-posts">
+{% for i in warehouse %}
+    <li> -->
+<!--    <p class="title">{{i.conf_name,i.volume, i.amount }}<p><input type="submit" value="Детально" /></p>-->
+    <!-- <p class="title"> Варення {{i[0]}}  -  {{i[1]}} л. <a href="{{ url_for('foo_getSort', sort = i[0]) }}">Детально про {{i[0]}}</a>
+
+
+
+    </p>
+
+    </li>
+{% endfor %}
+</ul> -->
+
+<!--{{ warehouse | safe }}-->
+
+
+
+
+<!--<hr>-->
+<!--<h2>Список статей</h2>-->
+<!--<ul class="list-posts">-->
+<!--{% for p in posts %}-->
+<!--    <li>-->
+<!--    <p class="title"><a href="{{ url_for('showPost', alias=p.url)}}">{{p.title}}</a></p>-->
+<!--    <p class="annonce">{{ p.text[:50] | striptags}}</p>-->
+<!--    </li>-->
+<!--{% endfor %}-->
+<!--</ul>-->
+
+
+{% endblock content %}
